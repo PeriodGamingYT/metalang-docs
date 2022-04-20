@@ -1,7 +1,7 @@
 log(LogType.info, "Hello!") @verbose / Output is: "[INFO]: Hello!.\n". /
 log(
  (content, type) ->
-  log("!! {upper(type > displayName)} !!: {content}.") @new-line
+  log("!! {upper(type => displayName)} !!: {content}.") @new-line
 ) @verbose-config
 
 log(LogType.fatal, "Something happened") @verbose / Output is: "!! FATAL !!: Something happened.\n". /
