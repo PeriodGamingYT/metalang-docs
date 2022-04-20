@@ -1,0 +1,14 @@
+_start(<u0>(.)) ->
+ / I use !'/modules/core/exists/' because in _start nothing is loaded, except for core and builtin modules.
+ !'/modules/core/at-symbol/initalize'
+ !'/modules/core/user/initalize'
+ !'/modules/builtin/initalize'
+ !'/modules/program-manipulation/initalize'
+ !'/modules/core/exists/(!'/program/main') ->
+  !'/program/core/execution/main/set'(!'/program/main') / If main() is found, go there instead. /
+ !'/program/core/execution/stack/add'(!'/core/execution/main/set')
+ !'/modules/core/bindings/syscall/exit'
+
+@library(std) / Everything is loaded, so I can use std, 
+main(<u0>(.)) -> / I don't have to use main, but for big scale software, it is advised. /
+ log("Hello, World!") @clear-screen, @new-line
